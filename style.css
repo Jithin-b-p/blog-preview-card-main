@@ -1,0 +1,118 @@
+:root {
+  --ff-primary: "Figtree", sans-serif;
+
+  --fw-600: 600;
+  --fw-800: 800;
+
+  --color-primary: hsl(47, 88%, 63%);
+
+  --color-neutral-100: hsl(0, 0%, 100%);
+  --color-neutral-200: hsl(0, 0%, 50%);
+  --color-neutral-300: hsl(0, 0%, 7%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  height: 100svh;
+  box-sizing: border-box;
+  font-family: var(--ff-primary);
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-card {
+  max-width: 38rem;
+  padding: 2rem;
+  font-size: 1.3rem;
+  background-color: var(--color-neutral-100);
+  border: 1.5px solid var(--color-neutral-300);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0.8rem 0.8rem var(--color-neutral-300);
+  transition: box-shadow 0.5s;
+}
+
+.preview-card:has(.preview-details__heading:hover) {
+  box-shadow: 1.5rem 1.5rem var(--color-neutral-300);
+}
+
+@media only screen and (max-width: 23.4375em) {
+  html {
+    font-size: 55%;
+  }
+  .preview-card {
+    width: 35rem;
+    margin-inline: 2rem;
+  }
+}
+
+.preview-img {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.preview-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.preview-details__purpose {
+  padding: 0.5rem 1.2rem;
+  font-weight: var(--fw-800);
+  background-color: var(--color-primary);
+  align-self: flex-start;
+  border-radius: 0.4rem;
+}
+
+.preview-details__date {
+  margin-block-start: -1rem;
+  font-weight: var(--fw-600);
+}
+
+.preview-details__heading {
+  font-size: 2.3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.preview-details__heading:hover {
+  color: var(--color-primary);
+}
+
+.preview-details__paragraph {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--color-neutral-200);
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.user-details__img {
+  width: 3.5rem;
+  margin-inline-end: 1rem;
+}
+
+.user-details__name {
+  font-size: 1.6rem;
+  font-weight: var(--fw-800);
+}
